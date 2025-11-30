@@ -1,7 +1,7 @@
 const response = 
-await fetch('http://localhost:3000/produtos?cor=azul&tamanho=g', 
+await fetch('http://localhost:3000/produtos', 
   {
-    method: 'POST',
+  method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -9,5 +9,7 @@ await fetch('http://localhost:3000/produtos?cor=azul&tamanho=g',
   }
 );
 
-const body = await response.text();
-console.log(body);
+console.log(response); 
+
+const body = await response.json();
+console.log(body.nome);
